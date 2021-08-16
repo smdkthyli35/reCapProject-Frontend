@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Rental } from 'src/app/models/rental';
+import { RentalDetailService } from 'src/app/services/rental-detail.service';
 import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
@@ -10,14 +11,21 @@ import { RentalService } from 'src/app/services/rental.service';
 export class RentalComponent implements OnInit {
 
   rentals:Rental[] = [];
-  constructor(private rentalService:RentalService) { }
+  constructor(private rentalService:RentalService, private rentalDetailService:RentalDetailService) { }
 
   ngOnInit(): void {
-    this.getRentals();
+    // this.getRentals();
+    this.getRentalsDetail();
   }
 
-  getRentals() {
-    this.rentalService.getRentals().subscribe(response=>{
+  // getRentals() {
+  //   this.rentalService.getRentals().subscribe(response=>{
+  //     this.rentals = response.data
+  //   })
+  // }
+
+  getRentalsDetail() {
+    this.rentalDetailService.getRentalsDetail().subscribe(response=>{
       this.rentals = response.data
     })
   }
