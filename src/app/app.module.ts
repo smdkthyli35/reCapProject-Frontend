@@ -9,7 +9,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { ColorComponent } from './components/color/color.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { BrandComponent } from './components/brand/brand.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
