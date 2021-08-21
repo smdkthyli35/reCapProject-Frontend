@@ -1,4 +1,4 @@
 <ul class="list-group">
-  <li class="list-group-item active text-center">Markalar</li>
-  <li *ngFor="let brand of brands" class="list-group-item text-center">{{ brand.brandName }}</li>
+  <li style="cursor: pointer;" routerLink="/cars" [class]="getAllBrandClass()">Tüm Markalar</li>
+  <li (click)="setCurrentBrand(brand)" style="cursor: pointer;" routerLink="/cars/brands/{{brand.brandId}}" *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)">{{ brand.brandName }}</li>
 </ul>
